@@ -1,46 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        black: '#191624',
-      },
-      animation: {
-        slideup: 'slideup 1s ease-in-out',
-        slidedown: 'slidedown 1s ease-in-out',
-        slideleft: 'slideleft 1s ease-in-out',
-        slideright: 'slideright 1s ease-in-out',
-        wave: 'wave 1.2s linear infinite',
-        slowfade: 'slowfade 2.2s ease-in-out',
-      },
-      keyframes: {
-        slowfade: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        slideup: {
-          from: { opacity: 0, transform: 'translateY(25%)' },
-          to: { opacity: 1, transform: 'none' },
-        },
-        slidedown: {
-          from: { opacity: 0, transform: 'translateY(-25%)' },
-          to: { opacity: 1, transform: 'none' },
-        },
-        slideleft: {
-          from: { opacity: 0, transform: 'translateX(-20px)' },
-          to: { opacity: 1, transform: 'translateX(0)' },
-        },
-        slideright: {
-          from: { opacity: 0, transform: 'translateX(20px)' },
-          to: { opacity: 1, transform: 'translateX(0)' },
-        },
-        wave: {
-          '0%': { transform: 'scale(0)' },
-          '50%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(0)' },
-        },
-      },
+    content: [
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/**/*.{js,ts,jsx,tsx,mdx}'
+    ],
+    mode: 'jit',
+    theme: {
+        extend: {
+            fontFamily: {
+                inter: ['Inter', 'sans-serif']
+            },
+            colors: {
+                'black-100': '#2B2C35',
+                'primary-blue': {
+                    DEFAULT: '#2B59FF',
+                    100: '#F5F8FF'
+                },
+                'secondary-orange': '#f79761',
+                'light-white': {
+                    DEFAULT: 'rgba(59,60,152,0.03)',
+                    100: 'rgba(59,60,152,0.02)'
+                },
+                grey: '#747A88'
+            },
+            backgroundImage: {
+                pattern: "url('/pattern.png')",
+                'hero-bg': "url('/hero-bg.png')"
+            }
+        }
     },
-  },
-};
+    plugins: []
+}
